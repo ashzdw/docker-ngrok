@@ -3,9 +3,9 @@
 ## BUILD IMAGE
 
 ```linux
-git clone https://github.com/hteen/docker-ngrok.git
+git clone https://github.com/ashzdw/docker-ngrok.git
 cd docker-ngrok
-docker build -t hteen/ngrok .
+docker build -t ashzdw/ngrok .
 ```
 
 ## RUN
@@ -13,7 +13,7 @@ docker build -t hteen/ngrok .
 * if it is the first run, it will generate the binaries file and CA in your floder `/data/ngrok`
 
 ```linux
-docker run -idt --name ngrok-server \
+docker run -idt --name ngrok-server --network host\
 -v /data/ngrok:/myfiles \
--e DOMAIN='tunnel.hteen.cn' hteen/ngrok /bin/sh /server.sh
+-e DOMAIN='tunnel.ashzdw.cn' ashzdw/ngrok /bin/sh /server.sh
 ```
